@@ -71,4 +71,26 @@ const wrapper = document.querySelector('.tab__tabwrapper');
        universe('tab__item', tabs);
        universe('click', divintabs)
       })
+
+/* изменение карточек */
+const more = document.querySelectorAll('.tab__more');
+      prev = document.querySelectorAll('.tab__prev');
+      card1 = document.querySelectorAll('.tab__card');
+      card2 = document.querySelectorAll('.tab__cardtextdesc');   
+
+      more.forEach((elem, i)=>{
+        elem.addEventListener('click', ()=>{  
+            card1[i].style.transform = 'translateX(-100%)'
+            card2[i].style.transform = 'translateX(-100%)'          
+        })
+      })
+      
+      prev.forEach((elem, i)=>{
+        elem.addEventListener('click', ()=>{          
+            card1[i].style.transform = 'translateX(0%)'
+            card2[i].style.transform = 'translateX(100%)'          
+        })
+      })
+
+
 })

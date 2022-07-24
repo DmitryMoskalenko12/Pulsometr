@@ -52,6 +52,50 @@
     margin-top: 57px
   &__showtab
     display: flex 
+
+
+  &__block2card
+    display: flex
+    justify-content: space-between
+    width: 303px
+    min-height: 439px
+    overflow: hidden
+  &__2xcard
+    width: 200%
+    display: flex
+    justify-content: space-between
+  &__cardtextdesc
+    width: 303px
+    height: 439px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    border: 2px solid #D0D0D0
+    margin-bottom: 19px
+    transform: translateX(100%)
+    transition: 0.6s all
+  &__ul
+    list-style-type: square
+  &__li
+    width: 251px
+    margin-top: 3px
+    margin-bottom: 5px
+    font-weight: 300
+    font-size: 14px
+    color: #555555
+  &__prev
+    font-weight: 500
+    font-size: 14px
+    text-align: center
+    text-decoration: none
+    margin-top: 75px
+    color: #C70101
+    text-transform: uppercase
+    cursor: pointer
+
+
+
+
   &__card
     width: 303px
     display: flex
@@ -59,6 +103,8 @@
     justify-content: center
     border: 2px solid #D0D0D0
     margin-bottom: 19px
+    transform: translateX(0%)
+    transition: 0.6s all
   &__imgwrapper
     width: 140px
     height: 200px
@@ -85,6 +131,7 @@
     text-decoration: none
     margin-top: 10px
     color: #C70101
+    cursor: pointer
   &__line
     width: 263px
     height: 2px
