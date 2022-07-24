@@ -1,12 +1,13 @@
 .modal
   display: none
-  position: absolute
+  position: fixed
   width: 382px
   height: 402px
   background: #F2F2F2
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
+  z-index: 2
   
   &__close
     position: absolute
@@ -61,13 +62,14 @@
 
 .modal-order
   display: none
-  position: absolute
+  position: fixed
   width: 382px
   height: 402px
   background: #F2F2F2
   left: 50%
   top: 50%
   transform: translate(-50%, -50%)
+  z-index: 2
   &__close-order
     position: absolute
     font-size: 40px

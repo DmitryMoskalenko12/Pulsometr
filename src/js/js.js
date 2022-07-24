@@ -96,6 +96,7 @@ const more = document.querySelectorAll('.tab__more');
 const activeButton = document.querySelectorAll('.activeconsultation');
       modal1 = document.querySelector('.modal');
       modalClose = document.querySelector('.modal__close');
+      overlay = document.querySelector('.overlay')
 
       modalOrder = document.querySelector('.modal-order');
       modalOrderclose = document.querySelector('.modal-order__close-order');
@@ -106,15 +107,19 @@ const activeButton = document.querySelectorAll('.activeconsultation');
       function showModal() {
         activeButton.forEach(item=>{
           item.addEventListener('click',()=>{
-            modal1.style.display = 'block'
-            
+            modal1.style.display = 'block';
+            overlay.style.display = 'block';
+            document.body.style.overflow ='hidden'           
           })
         })
       }
       showModal()
+
       function closeModal() {
         modalClose.addEventListener('click',()=>{
-            modal1.style.display = 'none'
+            modal1.style.display = 'none';
+            overlay.style.display = 'none';
+            document.body.style.overflow =''
           })
       }
       closeModal()
@@ -124,7 +129,9 @@ const activeButton = document.querySelectorAll('.activeconsultation');
       modalOrderactive.forEach((item, i)=>{
         item.addEventListener('click',()=>{
           modalOrder.style.display = 'block';
-          modalTitle.textContent = pulsometrDescr[i].textContent
+          modalTitle.textContent = pulsometrDescr[i].textContent;
+          overlay.style.display = 'block';
+          document.body.style.overflow ='hidden'
 
         })
       })
@@ -133,7 +140,9 @@ const activeButton = document.querySelectorAll('.activeconsultation');
     
     function closeModalorder() {
       modalOrderclose.addEventListener('click',()=>{
-        modalOrder.style.display = 'none'
+        modalOrder.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.style.overflow =''
         })
     }
     closeModalorder()
