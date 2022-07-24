@@ -92,5 +92,50 @@ const more = document.querySelectorAll('.tab__more');
         })
       })
 
+/* модальные окна */
+const activeButton = document.querySelectorAll('.activeconsultation');
+      modal1 = document.querySelector('.modal');
+      modalClose = document.querySelector('.modal__close');
 
+      modalOrder = document.querySelector('.modal-order');
+      modalOrderclose = document.querySelector('.modal-order__close-order');
+      modalOrderactive = document.querySelectorAll('.tab__cardbutton');
+      pulsometrDescr = document.querySelectorAll('.tab__cardtitle');
+      modalTitle = document.querySelector('.modal-order__title2-order')
+
+      function showModal() {
+        activeButton.forEach(item=>{
+          item.addEventListener('click',()=>{
+            modal1.style.display = 'block'
+            
+          })
+        })
+      }
+      showModal()
+      function closeModal() {
+        modalClose.addEventListener('click',()=>{
+            modal1.style.display = 'none'
+          })
+      }
+      closeModal()
+     /* для секции с табами */
+
+     function showModalorder() {
+      modalOrderactive.forEach((item, i)=>{
+        item.addEventListener('click',()=>{
+          modalOrder.style.display = 'block';
+          modalTitle.textContent = pulsometrDescr[i].textContent
+
+        })
+      })
+    }
+    showModalorder()
+    
+    function closeModalorder() {
+      modalOrderclose.addEventListener('click',()=>{
+        modalOrder.style.display = 'none'
+        })
+    }
+    closeModalorder()
+    
 })
