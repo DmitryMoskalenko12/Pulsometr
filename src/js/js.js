@@ -146,5 +146,75 @@ const activeButton = document.querySelectorAll('.activeconsultation');
         })
     }
     closeModalorder()
-    
+
+    /* делаем запрос на сервер */
+
+const form = document.querySelector('.modal__main');
+      sectionForm = document.querySelector('.form__main');
+      modalthanks = document.querySelector('.modal-thanks');
+      modalClosethanks = document.querySelector('.modal-thanks__close-order');
+      orderForm = document.querySelector('.modal-order__main-order');
+
+  modalClosethanks.addEventListener('click', ()=>{
+    modalthanks.style.display = 'none';
+    overlay.style.display = 'none';
+  })
+
+  async function postData (url, data) {
+    let res = await fetch(url,{
+     method: 'POST',
+     headers: {'Content-Type': 'application/json'},
+     body: data});
+     return await res.json()
+  }
+
+  sectionForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const formData = new FormData(sectionForm);
+    const json = JSON.stringify(Object.fromEntries(formData.entries()));
+    postData('http://localhost:3000/postinfo', json)
+    .then(()=>{sectionForm.reset()}
+  ) 
+})
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const formData = new FormData(form);
+    const json = JSON.stringify(Object.fromEntries(formData.entries()));
+    postData('http://localhost:3000/postinfo', json)
+    .then(()=>{
+    modal1.style.display='none';
+    modalthanks.style.display='block';
+    overlay.style.display = 'block';
+    setTimeout(() => {
+    modalthanks.style.display='none';
+    overlay.style.display = 'none';
+    document.body.style.overflow =''
+    }, 2000);
+    form.reset()
+    }
+  ) 
+})
+
+
+orderForm.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const formData = new FormData(orderForm);
+  formData.append('order', modalTitle.textContent)
+  const json = JSON.stringify(Object.fromEntries(formData.entries()));
+  postData('http://localhost:3000/postorder', json)
+  .then(()=>{
+  modalOrder.style.display='none';
+  modalthanks.style.display='block';
+  overlay.style.display = 'block';
+  setTimeout(() => {
+  modalthanks.style.display='none';
+  overlay.style.display = 'none';
+  document.body.style.overflow =''
+  }, 2000);
+  orderForm.reset()
+  }
+) 
+})
+  
+  
 })
