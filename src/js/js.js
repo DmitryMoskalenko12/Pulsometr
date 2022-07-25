@@ -102,14 +102,17 @@ const activeButton = document.querySelectorAll('.activeconsultation');
       modalOrderclose = document.querySelector('.modal-order__close-order');
       modalOrderactive = document.querySelectorAll('.tab__cardbutton');
       pulsometrDescr = document.querySelectorAll('.tab__cardtitle');
-      modalTitle = document.querySelector('.modal-order__title2-order')
+      modalTitle = document.querySelector('.modal-order__title2-order');
+      scrolBlock = document.querySelector('.blockscrol');
+      scroll1 = scroll()
 
       function showModal() {
         activeButton.forEach(item=>{
           item.addEventListener('click',()=>{
             modal1.style.display = 'block';
             overlay.style.display = 'block';
-            document.body.style.overflow ='hidden'           
+            document.body.style.overflow ='hidden';
+            document.body.style.marginRight=`${scroll1}px`   
           })
         })
       }
@@ -119,10 +122,17 @@ const activeButton = document.querySelectorAll('.activeconsultation');
         modalClose.addEventListener('click',()=>{
             modal1.style.display = 'none';
             overlay.style.display = 'none';
-            document.body.style.overflow =''
+            document.body.style.overflow ='';
+            document.body.style.marginRight =`0px`
           })
       }
       closeModal()
+      
+      function scroll() {
+       let result = scrolBlock.offsetWidth - scrolBlock.clientWidth;
+       scrolBlock.remove();
+       return result
+      }
      /* для секции с табами */
 
      function showModalorder() {
@@ -131,7 +141,8 @@ const activeButton = document.querySelectorAll('.activeconsultation');
           modalOrder.style.display = 'block';
           modalTitle.textContent = pulsometrDescr[i].textContent;
           overlay.style.display = 'block';
-          document.body.style.overflow ='hidden'
+          document.body.style.overflow ='hidden';
+          document.body.style.marginRight=`${scroll1}px`
 
         })
       })
@@ -142,7 +153,8 @@ const activeButton = document.querySelectorAll('.activeconsultation');
       modalOrderclose.addEventListener('click',()=>{
         modalOrder.style.display = 'none';
         overlay.style.display = 'none';
-        document.body.style.overflow =''
+        document.body.style.overflow ='';
+        document.body.style.marginRight =`0px`
         })
     }
     closeModalorder()
