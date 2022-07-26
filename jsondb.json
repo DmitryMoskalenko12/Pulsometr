@@ -11,6 +11,12 @@
       "tel": "335454545",
       "email": "dmtrmsklnk@gmail.com",
       "id": 2
+    },
+    {
+      "name": "ssrgergh",
+      "tel": "464646",
+      "email": "dima.oksagen12@gmail.com",
+      "id": 3
     }
   ],
   "postorder": [
@@ -34,6 +40,13 @@
       "email": "dmtrmsklnk@gmail.com",
       "order": "Пульсометр Caro WE3",
       "id": 3
+    },
+    {
+      "name": "Светлана",
+      "tel": "9999999999",
+      "email": "dmtrmsklnk@gmail.com",
+      "order": "Пульсометр Polar FT1",
+      "id": 4
     }
   ]
 }

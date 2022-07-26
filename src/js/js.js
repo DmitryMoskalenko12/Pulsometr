@@ -7,6 +7,7 @@ const slides = document.querySelectorAll('.slider__img');
       
       let slideIndex = 1;
       slide(slideIndex)
+      
       function slide(n) {
         if(n > slides.length){
           slideIndex = 1
