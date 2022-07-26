@@ -228,5 +228,18 @@ orderForm.addEventListener('submit', (e)=>{
 ) 
 })
   
-  
+ /* функционал стрелки вверх */
+ const arrowToUp = document.querySelector('.circletostart');
+ window.addEventListener('scroll', ()=>{
+  if(document.documentElement.scrollTop > 2000){
+    arrowToUp.style.display ='block';  
+  }else{
+    arrowToUp.style.display ='none';
+  }
+ })
+
+ arrowToUp.addEventListener('click',()=>{
+  document.documentElement.scrollTop = '0px';
+ })
+
 })
