@@ -242,5 +242,6 @@ orderForm.addEventListener('submit', (e)=>{
  arrowToUp.addEventListener('click',()=>{
   document.documentElement.scrollTop = '0px';
  })
+ new WOW().init()
 
 })
