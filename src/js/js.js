@@ -1,42 +1,42 @@
 'Use strict'
+
 window.addEventListener('DOMContentLoaded', ()=> {
-  /* slider */
-const slides = document.querySelectorAll('.slider__img');
-      prev = document.querySelector('.slider__prev');
-      next = document.querySelector('.slider__next');
-      
-      let slideIndex = 1;
-      slide(slideIndex)
-      
-      function slide(n) {
-        if(n > slides.length){
-          slideIndex = 1
-        }
-        if(n < 1){
-          slideIndex = slides.length
-        }
 
-        slides.forEach(item=>{
-          item.style.display = 'none'
-        } 
-        )
+  const slides = document.querySelectorAll('.slider__img');
+  prev = document.querySelector('.slider__prev');
+  next = document.querySelector('.slider__next');
 
-        slides[slideIndex - 1].style.display = 'block'
-        
-      }
+let slideIndex = 1;
+slide(slideIndex)
 
-      function slidePlus(n) {
-        slide(slideIndex += n)
-      }
+function slide(n) {
+  if(n > slides.length){
+    slideIndex = 1
+  }
+  if(n < 1){
+    slideIndex = slides.length
+  }
 
-      prev.addEventListener('click', ()=>{
-        slidePlus(1)
-      })
+  slides.forEach(item=>{
+    item.style.display = 'none'
+  } 
+  )
 
-      next.addEventListener('click', ()=>{
-        slidePlus(-1)
-      })
+  slides[slideIndex - 1].style.display = 'block'
+  
+}
 
+function slidePlus(n) {
+  slide(slideIndex += n)
+}
+
+prev.addEventListener('click', ()=>{
+  slidePlus(1)
+})
+
+next.addEventListener('click', ()=>{
+  slidePlus(-1)
+})  
 /* табы */
 const wrapper = document.querySelector('.tab__tabwrapper');
       tabs = document.querySelectorAll('.tab__item');

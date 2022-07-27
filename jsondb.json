@@ -47,6 +47,13 @@
       "email": "dmtrmsklnk@gmail.com",
       "order": "Пульсометр Polar FT1",
       "id": 4
+    },
+    {
+      "name": "Edik",
+      "tel": "23223232323",
+      "email": "dmtrmsklnk@gmail.com",
+      "order": "Пульсометр Suunto M2",
+      "id": 5
     }
   ]
 }
